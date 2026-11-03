@@ -791,7 +791,7 @@ form.contact-form {
 
 @media (min-width: 761px) {
   .bio {
-    grid-template-columns: 0.582fr 1fr;
+    grid-template-columns: 0.63fr 1fr;
     align-items: start;
   }
 
