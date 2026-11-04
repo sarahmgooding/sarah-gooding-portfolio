@@ -266,17 +266,30 @@
   <script src="assets/js/nav.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
   <script>
-    const cards = document.querySelectorAll('.project-card')
+    const cards = [...document.querySelectorAll('.project-card')]
     const active = { category: 'all', industry: 'all' }
     const attrs = { category: 'category', industry: 'industry' }
 
+    const tokens = (card, group) => (card.dataset[attrs[group]] || '').split(' ')
+    const matches = (card, group) => active[group] === 'all' || tokens(card, group).includes(active[group])
+
     const applyFilters = () => {
-      cards.forEach(card => {
-        const visible = Object.keys(active).every(group => {
-          if (active[group] === 'all') return true
-          return (card.dataset[attrs[group]] || '').split(' ').includes(active[group])
+      // Hide pills that would show no projects given the other row's selection
+      Object.keys(active).forEach(group => {
+        const other = Object.keys(active).find(g => g !== group)
+        const available = new Set()
+        cards.filter(card => matches(card, other)).forEach(card => tokens(card, group).forEach(t => available.add(t)))
+        const pills = document.querySelectorAll(`.outlet-filter[data-group="${group}"] .filter-pill`)
+        pills.forEach(pill => {
+          pill.parentElement.hidden = pill.dataset.filter !== 'all' && !available.has(pill.dataset.filter)
         })
-        card.style.display = visible ? '' : 'none'
+        if (active[group] !== 'all' && !available.has(active[group])) {
+          active[group] = 'all'
+          pills.forEach(p => p.classList.toggle('is-active', p.dataset.filter === 'all'))
+        }
+      })
+      cards.forEach(card => {
+        card.style.display = Object.keys(active).every(group => matches(card, group)) ? '' : 'none'
       })
     }
 
