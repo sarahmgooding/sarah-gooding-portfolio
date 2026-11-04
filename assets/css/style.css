@@ -142,7 +142,8 @@ img {
 .hero .tagline {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-size: clamp(0.8rem, 1.45vw, 1.05rem);
+  white-space: nowrap;
   color: var(--ink-soft);
   margin: 0 0 20px;
 }
@@ -808,19 +809,6 @@ form.contact-form {
   margin-top: 28px;
 }
 
-/* Second pill row: pink with a rust outline so it reads as a separate filter */
-.outlet-filter-industry .filter-pill {
-  background: var(--peach);
-  border-color: var(--rust);
-  color: var(--rust);
-}
-
-.outlet-filter-industry .filter-pill:hover,
-.outlet-filter-industry .filter-pill.is-active {
-  background: var(--rust);
-  border-color: var(--rust);
-  color: #fff;
-}
 
 .case-back ~ .section-sub {
   font-family: var(--display);
@@ -865,7 +853,7 @@ form.contact-form {
   }
 
   .hero .tagline {
-    font-size: calc(100cqw / 26);
+    font-size: calc(100cqw / 31);
     margin: 0 0 calc(100cqw / 36);
   }
 
