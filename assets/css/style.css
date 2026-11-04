@@ -930,3 +930,23 @@ form.contact-form {
   font-size: 0.85rem;
   color: var(--ink-soft);
 }
+
+/* Static work-type labels on case pages (not clickable) */
+.work-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.work-tags li {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 5px 13px;
+}
