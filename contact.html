@@ -32,7 +32,7 @@
   <section class="page-header">
     <div class="wrap">
       <h1 class="section-title">Get in touch</h1>
-      <p class="section-sub">Available for freelance and full-time copywriting &amp; scriptwriting work.</p>
+      <p class="section-sub">I’m available for freelance and full-time copywriting and scriptwriting work.</p>
     </div>
   </section>
 
@@ -48,17 +48,18 @@
           </ul>
         </div>
         <div>
-          <!--
-            This form has no backend yet. To make it actually send messages,
-            sign up for a free form service (e.g. Formspree) and set the
-            form's action to the endpoint it gives you.
-          -->
-          <form class="contact-form" action="#" method="POST">
+          <!-- Messages are delivered by FormSubmit (formsubmit.co) to sarah.gooding@gmail.com -->
+          <form class="contact-form" action="https://formsubmit.co/sarah.gooding@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message from sarahgooding.com">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://sarahgooding.com/contact.html?sent=1">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email" required>
             <textarea name="message" placeholder="Message" required></textarea>
             <button class="btn" type="submit">Send</button>
-            <p class="form-note">Note: this form isn't wired up to send email yet — use the email link for now.</p>
+            <p class="form-note" id="form-sent" hidden>Thanks, your message has been sent.</p>
           </form>
         </div>
       </div>
@@ -77,6 +78,7 @@
   </footer>
 
   <script src="assets/js/nav.js"></script>
+  <script>if (location.search.includes('sent=1')) document.getElementById('form-sent').hidden = false</script>
   <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 </body>
 </html>
