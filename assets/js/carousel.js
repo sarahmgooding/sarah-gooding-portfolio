@@ -8,11 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const current = () => Math.round(track.scrollLeft / track.clientWidth)
     const go = i => {
-      const n = (i + slides.length) % slides.length
+      const n = Math.min(Math.max(i, 0), slides.length - 1)
       track.scrollTo({ left: n * track.clientWidth, behavior: 'smooth' })
     }
     const update = () => {
-      count.textContent = 'Course ' + (current() + 1) + ' of ' + slides.length
+      const i = current()
+      count.textContent = 'Course ' + (i + 1) + ' of ' + slides.length
+      // No wrap-around: stop at the first and last slide
+      prev.hidden = i <= 0
+      next.hidden = i >= slides.length - 1
     }
 
     prev.addEventListener('click', () => go(current() - 1))

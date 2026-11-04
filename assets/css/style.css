@@ -919,6 +919,8 @@ form.contact-form {
   background: rgba(42, 38, 34, 0.95);
 }
 
+.carousel-btn[hidden] { display: none; }
+
 .carousel-prev { left: 12px; }
 .carousel-next { right: 12px; }
 
