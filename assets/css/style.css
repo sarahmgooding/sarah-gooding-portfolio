@@ -955,3 +955,30 @@ form.contact-form {
   border-radius: 3px;
   padding: 6px 10px;
 }
+
+/* Embedded Instagram and Facebook posts (Jarrah) */
+.social-embeds {
+  column-width: 340px;
+  column-gap: 24px;
+  margin-bottom: 24px;
+}
+
+.social-embed {
+  break-inside: avoid;
+  margin: 0 0 24px;
+}
+
+.social-embed iframe {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.social-embed .instagram-media {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
