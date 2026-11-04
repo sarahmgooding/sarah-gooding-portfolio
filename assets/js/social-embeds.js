@@ -31,7 +31,10 @@
     els.forEach(function (el) {
       if (!el.querySelector('template')) return
       var r = el.getBoundingClientRect()
-      if (r.top < window.innerHeight + 300 && r.bottom > -300) load(el)
+      // TikTok is slower to start, so begin loading it about two screens early.
+      var t = el.querySelector('template')
+      var ahead = t && t.content.querySelector('.tiktok-embed') ? 1600 : 300
+      if (r.top < window.innerHeight + ahead && r.bottom > -300) load(el)
     })
   }
   function queue() { if (!queued) { queued = true; requestAnimationFrame(check) } }
