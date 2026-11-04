@@ -710,7 +710,7 @@ body.lightbox-lock {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 560px);
   gap: 40px;
 }
 
