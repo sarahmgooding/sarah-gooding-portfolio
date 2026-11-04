@@ -48,13 +48,13 @@
           </ul>
         </div>
         <div>
-          <!-- Messages are delivered by FormSubmit (formsubmit.co) to sarah.gooding@gmail.com -->
-          <form class="contact-form" action="https://formsubmit.co/sarah.gooding@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New message from sarahgooding.com">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://sarahgooding.com/contact.html?sent=1">
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <!-- Messages are delivered by Web3Forms (web3forms.com) to sarah.gooding@gmail.com -->
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="10186f49-1c95-493a-8d02-7baad6ab13a6">
+            <input type="hidden" name="subject" value="New message from sarahgooding.com">
+            <input type="hidden" name="from_name" value="sarahgooding.com">
+            <input type="hidden" name="redirect" value="https://sarahgooding.com/contact.html?sent=1">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
             <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email" required>
             <textarea name="message" placeholder="Message" required></textarea>
