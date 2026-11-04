@@ -947,8 +947,8 @@ form.contact-form {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: var(--rust);
-  color: #fff;
+  background: var(--peach);
+  color: var(--ink);
   border: 0;
   border-radius: 3px;
   padding: 6px 10px;
