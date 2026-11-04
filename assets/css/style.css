@@ -963,6 +963,7 @@ form.contact-form {
   margin-bottom: 24px;
 }
 
+.social-embed:not(.loaded) { min-height: 560px; }
 .social-embed {
   break-inside: avoid;
   margin: 0 0 24px;
