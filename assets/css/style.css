@@ -195,8 +195,8 @@ img {
   }
 
   .hero .tagline {
-    font-size: min(0.95rem, 4.1vw);
-    white-space: nowrap;
+    font-size: 0.95rem;
+    white-space: normal;
   }
 
   .tagline-extra {
