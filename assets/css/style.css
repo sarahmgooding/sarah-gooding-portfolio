@@ -808,6 +808,20 @@ form.contact-form {
   margin-top: 28px;
 }
 
+/* Second pill row: pink with a rust outline so it reads as a separate filter */
+.outlet-filter-industry .filter-pill {
+  background: var(--peach);
+  border-color: var(--rust);
+  color: var(--rust);
+}
+
+.outlet-filter-industry .filter-pill:hover,
+.outlet-filter-industry .filter-pill.is-active {
+  background: var(--rust);
+  border-color: var(--rust);
+  color: #fff;
+}
+
 .case-back ~ .section-sub {
   font-family: var(--display);
   text-transform: uppercase;
