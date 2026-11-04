@@ -16,13 +16,6 @@
     setTimeout(done, 12000)
     if (window.instgrm) window.instgrm.Embeds.process()
     if (window.FB && window.FB.XFBML) window.FB.XFBML.parse(el)
-    if (el.querySelector('.tiktok-embed')) {
-      // TikTok only scans the page when its script loads, so load it again for this post.
-      var s = document.createElement('script')
-      s.async = true
-      s.src = 'https://www.tiktok.com/embed.js'
-      document.body.appendChild(s)
-    }
   }
   // Load any post within 300px of the screen. Runs on load, scroll and resize.
   var queued = false
@@ -33,7 +26,7 @@
       var r = el.getBoundingClientRect()
       // TikTok is slower to start, so begin loading it about two screens early.
       var t = el.querySelector('template')
-      var ahead = t && t.content.querySelector('.tiktok-embed') ? 1600 : 300
+      var ahead = t && t.content.querySelector('.tiktok-player') ? 1600 : 300
       if (r.top < window.innerHeight + ahead && r.bottom > -300) load(el)
     })
   }
