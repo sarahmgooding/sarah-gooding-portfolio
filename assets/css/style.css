@@ -968,12 +968,12 @@ form.contact-form {
   margin: 0 0 24px;
 }
 
-.social-embed iframe {
+.social-embed .fb-post,
+.social-embed .fb-video {
   display: block;
-  width: 100%;
-  max-width: 500px;
   background: #fff;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .social-embed .instagram-media {
