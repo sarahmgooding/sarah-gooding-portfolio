@@ -1479,21 +1479,36 @@
   <script src="assets/js/nav.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
   <script>
-    const articles = document.querySelectorAll('.article-list li')
+    const articles = [...document.querySelectorAll('.article-list li')]
     const active = { genre: 'all', outlet: 'all' }
+    const groups = {}
+    document.querySelectorAll('.outlet-filter').forEach(g => { groups[g.dataset.group] = g })
 
-    document.querySelectorAll('.outlet-filter').forEach(group => {
+    const inGenre = article => active.genre === 'all' || article.dataset.genre.split(' ').includes(active.genre)
+
+    const update = () => {
+      // Hide publication pills that have no articles in the chosen genre
+      const outletsInGenre = new Set(articles.filter(inGenre).map(a => a.dataset.outlet))
+      groups.outlet.querySelectorAll('.filter-pill').forEach(pill => {
+        const f = pill.dataset.filter
+        pill.parentElement.hidden = f !== 'all' && !outletsInGenre.has(f)
+      })
+      if (active.outlet !== 'all' && !outletsInGenre.has(active.outlet)) {
+        active.outlet = 'all'
+        groups.outlet.querySelectorAll('.filter-pill').forEach(p => p.classList.toggle('is-active', p.dataset.filter === 'all'))
+      }
+      articles.forEach(article => {
+        article.hidden = !(inGenre(article) && (active.outlet === 'all' || article.dataset.outlet === active.outlet))
+      })
+    }
+
+    Object.entries(groups).forEach(([name, group]) => {
       const pills = group.querySelectorAll('.filter-pill')
       pills.forEach(pill => {
         pill.addEventListener('click', () => {
-          active[group.dataset.group] = pill.dataset.filter
+          active[name] = pill.dataset.filter
           pills.forEach(p => p.classList.toggle('is-active', p === pill))
-
-          articles.forEach(article => {
-            const genreOk = active.genre === 'all' || article.dataset.genre.split(' ').includes(active.genre)
-            const outletOk = active.outlet === 'all' || article.dataset.outlet === active.outlet
-            article.hidden = !(genreOk && outletOk)
-          })
+          update()
         })
       })
     })
