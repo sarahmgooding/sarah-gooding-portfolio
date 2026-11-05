@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const update = () => {
       const i = current()
-      count.textContent = (carousel.dataset.label || 'Slide') + ' ' + (i + 1) + ' of ' + slides.length
+      if (count) count.textContent = (carousel.dataset.label || 'Slide') + ' ' + (i + 1) + ' of ' + slides.length
       // No wrap-around: stop at the first and last slide
       prev.hidden = i <= 0
       next.hidden = i >= slides.length - 1
