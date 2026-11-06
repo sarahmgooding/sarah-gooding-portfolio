@@ -455,6 +455,23 @@ a.project-card:hover {
 
 .case-intro-small-image {
   grid-template-columns: 0.52fr 1.2fr;
+  align-items: stretch;
+}
+
+.case-intro-small-image > img {
+  align-self: start;
+}
+
+.case-intro-small-image .case-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-intro-small-image .case-text img.case-banner {
+  margin-top: 8px;
+  flex: 1 1 0;
+  min-height: 0;
+  object-fit: cover;
 }
 
 .case-intro img,
@@ -578,6 +595,11 @@ a.project-card:hover {
 
   .case-intro-small-image img {
     width: 67%;
+  }
+
+  .case-intro-small-image .case-text img.case-banner {
+    width: 100%;
+    flex: none;
   }
 
   .case-gallery {
