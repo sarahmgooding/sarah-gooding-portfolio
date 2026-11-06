@@ -1066,6 +1066,9 @@ form.contact-form {
   margin: 0 !important;
 }
 
-.case-stats{margin-top:20px;line-height:1.7}
-.case-stats strong{font-weight:600}
-.case-stats span{font-size:.9em;opacity:.7}
+
+.case-split{display:grid;grid-template-columns:1.7fr 1fr;gap:16px;align-items:start}
+.case-split-col{display:flex;flex-direction:column;gap:16px}
+.case-split .case-text p{margin:0 0 16px}
+.case-split img{width:100%;display:block;border-radius:12px;box-shadow:0 6px 18px rgba(42,38,34,0.08)}
+@media (max-width:760px){.case-split{grid-template-columns:1fr}}
