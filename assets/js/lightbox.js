@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const images = [...document.querySelectorAll('.case-gallery img, .case-media img, .step-carousel img')]
+  const images = [...document.querySelectorAll('.case-gallery img, .case-media img, .case-text-images img, .step-carousel img')]
   if (!images.length) return
 
   const overlay = document.createElement('div')

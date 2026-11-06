@@ -464,6 +464,20 @@ a.project-card:hover {
   box-shadow: 0 12px 30px rgba(42, 38, 34, 0.15);
 }
 
+.case-text-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.case-text-images img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(42, 38, 34, 0.08);
+}
+
 .case-intro .video-embed {
   position: relative;
   width: 100%;
@@ -578,6 +592,10 @@ a.project-card:hover {
 
   .case-intro-small-image img {
     width: 67%;
+  }
+
+  .case-intro-small-image .case-text-images img {
+    width: 100%;
   }
 
   .case-gallery {
