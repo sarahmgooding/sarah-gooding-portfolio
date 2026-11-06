@@ -1080,3 +1080,8 @@ form.contact-form {
 .case-split .case-text p{margin:0 0 16px}
 .case-split img{width:100%;display:block;border-radius:12px;box-shadow:0 6px 18px rgba(42,38,34,0.08)}
 @media (max-width:760px){.case-split{grid-template-columns:1fr}}
+
+.case-intro-pair{grid-template-columns:1fr 1fr;align-items:stretch}
+.case-intro-col{display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.case-intro-pair .case-text p{margin:0}
+@media (max-width:760px){.case-intro-pair{grid-template-columns:1fr}}
