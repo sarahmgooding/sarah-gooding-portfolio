@@ -453,6 +453,10 @@ a.project-card:hover {
   margin-bottom: 32px;
 }
 
+.case-intro-small-image {
+  grid-template-columns: 0.52fr 1.2fr;
+}
+
 .case-intro img,
 .case-intro video {
   width: 100%;
@@ -567,8 +571,13 @@ a.project-card:hover {
 }
 
 @media (max-width: 760px) {
-  .case-intro {
+  .case-intro,
+  .case-intro-small-image {
     grid-template-columns: 1fr;
+  }
+
+  .case-intro-small-image img {
+    width: 67%;
   }
 
   .case-gallery {
