@@ -973,6 +973,24 @@ form.contact-form {
   margin-bottom: 24px;
 }
 
+.social-embeds-three {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+  column-width: auto;
+}
+
+.social-embeds-three .social-embed { margin: 0; }
+
+@media (max-width: 760px) {
+  .social-embeds-three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  .social-embeds-three { grid-template-columns: minmax(0, 1fr); }
+}
+
 .social-embed:not(.loaded) { min-height: 560px; }
 .social-embed {
   break-inside: avoid;
