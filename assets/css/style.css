@@ -550,6 +550,12 @@ a.project-card:hover {
   box-shadow: 0 6px 18px rgba(42, 38, 34, 0.08);
 }
 
+.case-gallery img.gallery-crop {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
 .case-gallery {
   columns: 3 220px;
   column-gap: 16px;
