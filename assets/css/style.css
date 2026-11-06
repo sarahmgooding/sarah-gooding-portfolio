@@ -607,6 +607,10 @@ a.project-card:hover {
 }
 
 @media (max-width: 760px) {
+  .desktop-break {
+    display: none;
+  }
+
   .case-intro,
   .case-intro-small-image {
     grid-template-columns: 1fr;
