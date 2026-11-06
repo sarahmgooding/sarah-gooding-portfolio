@@ -530,6 +530,12 @@ a.project-card:hover {
   width: 200px;
 }
 
+.case-intro.text-wrap .case-media.case-media-small {
+  width: 26%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 @media (max-width: 760px) {
   .case-intro.text-wrap .case-media {
     float: none;
@@ -537,8 +543,10 @@ a.project-card:hover {
     margin: 0 0 24px;
   }
 
-  .case-intro.text-wrap .case-media.case-media-narrow {
+  .case-intro.text-wrap .case-media.case-media-narrow,
+  .case-intro.text-wrap .case-media.case-media-small {
     width: 100%;
+    margin-bottom: 24px;
   }
 }
 
