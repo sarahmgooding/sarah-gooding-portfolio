@@ -1053,6 +1053,21 @@ form.contact-form {
   .social-embeds-three { grid-template-columns: minmax(0, 1fr); }
 }
 
+.social-embeds-masonry { column-count: 3; column-width: auto; column-gap: 16px; }
+.social-embeds-masonry .social-embed { margin: 0 0 16px; }
+
+@media (min-width: 761px) {
+  .social-embeds-masonry .col-break { break-before: column; }
+}
+
+@media (max-width: 760px) {
+  .social-embeds-masonry { column-count: 2; }
+}
+
+@media (max-width: 480px) {
+  .social-embeds-masonry { column-count: 1; }
+}
+
 .social-embed:not(.loaded) { min-height: 560px; }
 .social-embed {
   break-inside: avoid;
