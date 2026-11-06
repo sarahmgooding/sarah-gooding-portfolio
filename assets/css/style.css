@@ -1065,3 +1065,7 @@ form.contact-form {
   width: 100% !important;
   margin: 0 !important;
 }
+
+.case-stats{margin-top:20px;line-height:1.7}
+.case-stats strong{font-weight:600}
+.case-stats span{font-size:.9em;opacity:.7}
